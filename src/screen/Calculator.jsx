@@ -1,5 +1,5 @@
+import { useState } from 'react'
 
-let acceleration;
 const netHeigh= .914; //in meter
  import React from 'react'
 
