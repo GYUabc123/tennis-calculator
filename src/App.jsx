@@ -16,9 +16,6 @@ function App() {
         <NavBar/>
         <BlackSquare/>
       </div>
-      
-      
-
     </>
   )
 }
