@@ -10,5 +10,27 @@
 }
 #navBarHeader{
     color:white;
-    
+    font-family: 'Nunito-sans-extra-bold';
+    position:relative;
+    left:32px;
+    top:16px;
+    font-size:24px;
+}
+#navBarRightItems{
+    font-family:'Nunito-sans-bold';
+    list-style: none;
+    left:70%;
+    top:-24px;
+    position:relative;
+    font-size:18px;
+}
+.navBarCurrentPage{
+    color:blue;
+    display:inline-block;
+    padding-right:16px;
+}
+.navBarListItem{
+    color:white;
+    display:inline-block;
+    padding-right:16px;
 }

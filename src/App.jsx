@@ -13,7 +13,7 @@ function App() {
     <>
       <div>
         <Calculator/>
-        <NavBar/>
+        <NavBar currentPage = "Home"/>
         <BlackSquare/>
       </div>
     </>
