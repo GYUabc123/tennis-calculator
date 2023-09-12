@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import BlackSquare from './component/BlackSquare'
 import NavBar from './component/NavBar'
+import Calculator from './screen/calculator'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,6 +12,7 @@ function App() {
   return (
     <>
       <div>
+        <Calculator/>
         <NavBar/>
         <BlackSquare/>
       </div>
