@@ -12,6 +12,7 @@ const netHeigh= .914; //in meter
     const [Velocity, setVelocity] = useState(0);
    return (
      <div>calculator</div>
+     //jeljfsdjfklsjflksdjfljLF
    )
  }
  
