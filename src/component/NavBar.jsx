@@ -7,6 +7,7 @@ function NavBar(props) {
         <ul id = "navBarRightItems">
             <li className = {props.currentPage == "Home" ? "navBarCurrentPage":"navBarListItem"}><a>Home</a></li>
             <li className = "navBarListItem"><a>Login</a></li>
+            <li className = "navBarListItem"><a>Sign Up</a></li>
         </ul>
     </div>
   )
