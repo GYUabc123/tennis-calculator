@@ -2,7 +2,6 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import BlackSquare from './component/BlackSquare'
 import NavBar from './component/NavBar'
 import Calculator from './screen/calculator'
 
@@ -14,7 +13,6 @@ function App() {
       <div>
         <Calculator/>
         <NavBar currentPage = "Home"/>
-        <BlackSquare/>
       </div>
     </>
   )
