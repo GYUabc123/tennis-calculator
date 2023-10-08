@@ -3,7 +3,7 @@ import "./NavBar.css"
 import { Link } from 'react-router-dom'
 function NavBar(props) {
   return (
-    <div id = "navBar"> //home
+    <div id = "navBar">
         <div id = "navBarHeader">Tennis when</div>
         <ul id = "navBarRightItems">
 
