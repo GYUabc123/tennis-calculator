@@ -18,7 +18,7 @@ export default function Login() {
 
           <div className = "loginFormField">
             <label>PASSWORD</label>
-            <input type = "text" required/>
+            <input type = "password" required/>
           </div>
 
           <div id = "loginFormSubmitButtonContainer">
