@@ -1,7 +1,6 @@
 import React from 'react'
 import "./NavBar.css"
 function NavBar(props) {
-    console.log(props.currentPage)
   return (
     <div id = "navBar">
         <div id = "navBarHeader">Tennis Now</div>
