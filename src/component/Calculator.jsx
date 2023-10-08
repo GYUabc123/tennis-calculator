@@ -49,8 +49,10 @@ const netHeigh= .914; //in meter
 
     //in or out       //All three need and over the net be true then the ball is IN
     //1.  11.887 <= DIstanceItTravel <= 18.745 to be in
-    //2.  X = sin(XAngle)*DistanceItTravel 0 <= X <= 4.115 to be in 
-    //3.  Y = cos(XAngle)*DistanceItTravel 11.887 <= Y <= 18.745
+    //2.  X = sin(XAngle)*DistanceItTravel 0 <= X <= 4.115 to be IN 
+
+    // XLandForServe = (sin(XAngle) / (sin(90-XAngle)/18.288))
+    //3.  Y = cos(XAngle)*DistanceItTravel 11.887 <= Y <= 18.745 AND Y < Math.sqrt(Math.pow(XLandForServe, 2) + Math.pow(18.288, 2))
 
 
      
