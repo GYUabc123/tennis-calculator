@@ -13,8 +13,9 @@ function NavBar(props) {
             <Link to="/login" style={{ textDecoration: 'none'}}>
               <li className = {props.currentPage == "Login" ? "navBarCurrentPage":"navBarListItem"}>
                 <a>Login</a></li>
-            <li className = "navBarListItem"><a>Sign Up</a></li>
             </Link>
+            <li className = "navBarListItem"><a>Sign Up</a></li>
+            
 
         </ul>
     </div>

@@ -8,6 +8,8 @@
     left:0px;
 
     position:absolute;
+    overflow-x: hidden;
+    overflow-y:hidden;
 }
 #navBarHeader{
     color:white;
