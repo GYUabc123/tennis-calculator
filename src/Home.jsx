@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <div>
+      <div id = "homeMain">
         <Calculator/>
         <NavBar currentPage = "Home"/>
       </div>
