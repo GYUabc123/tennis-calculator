@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import NavBar from './component/NavBar'
-import Calculator from './component/calculator'
+import Calculator from './component/Calculator'
 
 function App() {
   const [count, setCount] = useState(0)
