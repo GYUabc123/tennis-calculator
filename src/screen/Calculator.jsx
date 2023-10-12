@@ -26,7 +26,10 @@ const netHeigh= .914; //in meter
     const [Y, setY] = useState(0);
 
    return (
+      <div id = "calculatorContainer">
      <div>calculator</div>
+     <userInput/>
+     </div>
      //Calculation
 
      //YVelocity = cos(YAngle) * Velocity
@@ -53,12 +56,15 @@ const netHeigh= .914; //in meter
 
     // XLandForServe = (sin(XAngle) / (sin(90-XAngle)/18.288))
     //3.  Y = cos(XAngle)*DistanceItTravel 11.887 <= Y <= 18.745 AND Y < Math.sqrt(Math.pow(XLandForServe, 2) + Math.pow(18.288, 2))
-
+    
    )
  }
  
  function userInput(){
-  <div style="margin-top: 50px;"><input class="textBox" type="textBox" placeholder='Hit Point (height in metter)'></input></div>
+  return(
+    <div style="margin-top: 50px;"><input class="textBox" type="textBox" placeholder='Hit Point (height in metter)'></input></div>
+  )
  }
+
  export default Calculator
 
