@@ -6,7 +6,7 @@ import React from 'react'
 function UserInput() {
   console.log("AAAAAAAA");
   return (
-    <div>
+    <div id="userIn">
     <input className="textBox" type="text" placeholder="Hit Point (height in meter)" />
     </div>
 );
