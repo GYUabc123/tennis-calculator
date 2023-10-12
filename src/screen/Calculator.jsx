@@ -1,9 +1,16 @@
 import { useState } from 'react'
-
+import './Calculator.css'
 const netHeigh= .914; //in meter
- import React from 'react'
+import React from 'react'
 
-
+function UserInput() {
+  console.log("AAAAAAAA");
+  return (
+    <div>
+    <input className="textBox" type="text" placeholder="Hit Point (height in meter)" />
+    </div>
+);
+}
  function Calculator() { //rfce
     const [Velocity, setVelocity] = useState(0);
 
@@ -24,11 +31,10 @@ const netHeigh= .914; //in meter
     //X and Y in the ground (check if it is in or out)
     const [X, setX] = useState(0);
     const [Y, setY] = useState(0);
-
    return (
       <div id = "calculatorContainer">
      <div>calculator</div>
-     <userInput/>
+     <UserInput/>
      </div>
      //Calculation
 
@@ -58,12 +64,6 @@ const netHeigh= .914; //in meter
     //3.  Y = cos(XAngle)*DistanceItTravel 11.887 <= Y <= 18.745 AND Y < Math.sqrt(Math.pow(XLandForServe, 2) + Math.pow(18.288, 2))
     
    )
- }
- 
- function userInput(){
-  return(
-    <div style="margin-top: 50px;"><input class="textBox" type="textBox" placeholder='Hit Point (height in metter)'></input></div>
-  )
  }
 
  export default Calculator
