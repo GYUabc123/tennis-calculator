@@ -8,6 +8,8 @@ function UserInput() {
   return (
     <div id="userIn">
     <input className="textBox" type="text" placeholder="Hit Point (height in meter)" />
+    <input className="textBox" type="text" placeholder="X-degree"/>
+    <input className="textBox" type="text" placeholder="Y-degree"/>
     </div>
 );
 }
