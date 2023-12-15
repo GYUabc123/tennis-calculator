@@ -31,7 +31,7 @@ const UserInput = ()=> {
     const [Y, setY] = useState(0);
 
     const Calculator = () => { 
-      
+      d
       //Calculation
 
       //YVelocity = cos(YAngle) * Velocity
@@ -58,11 +58,11 @@ const UserInput = ()=> {
 
     // XLandForServe = (sin(XAngle) / (sin(90-XAngle)/18.288))
     //3.  Y = cos(XAngle)*DistanceItTravel 11.887 <= Y <= 18.745 AND Y < Math.sqrt(Math.pow(XLandForServe, 2) + Math.pow(18.288, 2))
-      );
+    
   }
   
-    const handleCalculateClick = (e) =>{
-      setResult(200 );
+    const handleCalculateClick = () =>{
+      setResult(200);
     }
 
     return (
