@@ -1,0 +1,18 @@
+.textBox{
+    border: 2px black solid;
+    margin-right: 10px;
+}
+
+#userIn{
+    margin-top:70px;
+}
+
+#button{
+    display: block;
+    margin-top: 1em;        /*1em = 16px*/
+    border-color: black;
+    cursor: pointer;
+    width: 55px;
+    height: 40px;
+    border-radius: 10px;
+}

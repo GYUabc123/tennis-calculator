@@ -1,0 +1,9 @@
+#retard{
+    margin:50px;
+}
+
+html{
+    background: linear-gradient( rgb(253, 253, 151), rgb(152, 53, 53), rgb(71, 71, 205));
+    width: 100%;
+    height: 100%;
+}

@@ -1,19 +1,15 @@
-import { useState } from 'react'
-import './Calculator.css'
-const netHeigh= .914; //in meter
 import React from 'react'
+import "./UserInput.css"
+import "./Cal.css"
+import {useEffect, useState} from 'react';
 
-function UserInput() {
-  console.log("AAAAAAAA");
-  return (
-    <div id="userIn">
-    <input className="textBox" type="text" placeholder="Hit Point (height in meter)" />
-    <input className="textBox" type="text" placeholder="X-degree"/>
-    <input className="textBox" type="text" placeholder="Y-degree"/>
-    </div>
-);
-}
- function Calculator() { //rfce
+
+
+const UserInput = ()=> {
+    const [result, setResult] = useState(0);
+    
+
+    
     const [Velocity, setVelocity] = useState(0);
 
     const [YPosition, setYPosition] = useState(0);
@@ -33,18 +29,16 @@ function UserInput() {
     //X and Y in the ground (check if it is in or out)
     const [X, setX] = useState(0);
     const [Y, setY] = useState(0);
-   return (
-      <div id = "calculatorContainer">
-     <div>calculator</div>
-     <UserInput/>
-     </div>
-     //Calculation
 
-     //YVelocity = cos(YAngle) * Velocity
-     ////////0 = 4.9t^2 + YVelocityt - YPosition
-     // Time = (-1) * YVelocity + Math.sqrt(Math.pow(YVelocity, 2) - 4* 4.9 * (-1)*YPosition) //time it took for ball to land 
+    const Calculator = () => { 
+      
+      //Calculation
 
-     //XVelocity = sin(YAngle) * velocity
+      //YVelocity = cos(YAngle) * Velocity
+      ////////0 = 4.9t^2 + YVelocityt - YPosition
+      // Time = (-1) * YVelocity + Math.sqrt(Math.pow(YVelocity, 2) - 4* 4.9 * (-1)*YPosition) //time it took for ball to land 
+
+      //XVelocity = sin(YAngle) * velocity
     //DistanceItTravel = sin(89) * XVelocity // the ball travel this distance and hit the ground
 
                                                                   //X at net = sin(XAngle)/(sin(90 - XAngle)/11.887)
@@ -64,9 +58,28 @@ function UserInput() {
 
     // XLandForServe = (sin(XAngle) / (sin(90-XAngle)/18.288))
     //3.  Y = cos(XAngle)*DistanceItTravel 11.887 <= Y <= 18.745 AND Y < Math.sqrt(Math.pow(XLandForServe, 2) + Math.pow(18.288, 2))
-    
-   )
- }
+      );
+  }
+  
+    const handleCalculateClick = (e) =>{
+      setResult(200 );
+    }
 
- export default Calculator
+    return (
+      <div className = "userIn" id="userIn">
+          <input className="textBox" type="text" placeholder="Hit Point (height in meter)" id = "height" required/>
+          <input className="textBox" type="text" placeholder="X-degree" id = "XDegree" required/>
+          <input className='textBox' type="text" placeholder="velocity" id = "velocity" required/>
+          <input className="textBox" type="text" placeholder="Y-degree" id = "YDegree" required/>
+        <button onClick = {handleCalculateClick}>
+          Calculate
+        </button>
+  
+        <h1>{result}</h1>
 
+      </div>
+      
+    );
+}
+
+  export default UserInput;
