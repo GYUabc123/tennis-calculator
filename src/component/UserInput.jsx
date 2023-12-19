@@ -34,27 +34,45 @@ const UserInput = ()=> {
 
       //YVelocity = Math.sin(YDegree.value) * Velocity
       var YVelocity = Math.sin((YAngles*Math.PI) / 180) * Velocity;
-      console.log("Vy ", {YVelocity});
-      console.log("Hi", {YPosition});
+      console.log("Vy ", YVelocity);
+      console.log("Hi", YPosition);
 
-      var YPosAtNet;
 
       //XVelocity = cos(YAngle) * velocity
-      var XVelocity = Math.cos(YAngles) * Velocity;
-      console.log("Vx", {XVelocity});
+      var XVelocity = Math.cos((YAngles*Math.PI) /180) * Velocity;
+      console.log("Vx", XVelocity);
 
 
       // Time = (-1) * YVelocity + Math.sqrt(Math.pow(YVelocity, 2) - 4* 4.9 * (-1)*YPosition) / (2*4.9) //time it took for ball to land 
       var Time = ((-1) * YVelocity + Math.sqrt(Math.pow(YVelocity,2) - 4* 4.9 * (-1)*YPosition)) / (2*4.9);
-      console.log("Time it take for the ball to hit the ground", {Time});
+      console.log("Time it take for the ball to hit the ground", Time);
 
-      var XPositionHitGround = Time * XVelocity;
-      console.log("X disitance travel then hit the ground", {XPositionHitGround});
+      var PositionHitGround = Time * XVelocity;
+      console.log("Ball travel this disitance then hit the ground", PositionHitGround);
+
+          // XLandForServe = (sin(XAngle) / (sin(90-XAngle)/18.288))
+      let XAXA = (Math.sin(XAngles * Math.PI / 180) / (Math.sin((90-XAngles) * Math.PI /180) / 18.288));
+      console.log("X land for serve (X-asix)", XAXA );
+      
 
 
-      var XPosAtNet;
+      //X at net = sin(XAngle)/(sin(90 - XAngle)/11.887)
+      let XPosAtNet = (Math.tan(XAngles * Math.PI / 180)) * 11.887;
+      console.log("XAtNet", XPosAtNet);
 
-      var TimeAtNet;
+      //Distance It Travel At Net = Math.sqrt(Math.pow(11.887, 2) + Math.pow(sin(XAngle)/(sin(90 - XAngle)/11.887), 2) // ball travel this distance then reach the net
+      let DistanceBallTravelToNet = Math.sqrt(Math.pow(11.887, 2) + Math.pow(XPosAtNet, 2));
+      console.log("DistanceBallTravelToNet", DistanceBallTravelToNet);
+
+
+      //Y's Position At the Net
+    //TimeAtNet = DistanceBallTravelToNet / XVelocity
+    //YPosAtNet = YVelocity * TimeAtNet + 4.9 * Math.pow(TimeAtNet, 2) //if <= .914  = not over the net
+    
+      let TimeAtNet = DistanceBallTravelToNet / XVelocity;
+      let YPosAtNet = YPosition - (YVelocity * TimeAtNet + 4.9 * Math.pow(TimeAtNet, 2)); // need to be <.914 to be over the net
+      console.log("time at net", TimeAtNet);
+      console.log("Y at net", YPosAtNet);
 
     //X and Y in the ground (check if it is in or out)
       var X = 0;
@@ -68,9 +86,10 @@ const UserInput = ()=> {
 
       //XVelocity = cos(YAngle) * velocity DONE
 
+      //Done
     //DistanceItTravel = time * XVelocity // the ball travel this distance and hit the ground
 
-                                                                  //X at net = sin(XAngle)/(sin(90 - XAngle)/11.887)
+    //Done                                                       //X at net = sin(XAngle)/(sin(90 - XAngle)/11.887)
     //DistanceItTravelAtNet = Math.sqrt(Math.pow(11.887, 2) + Math.pow(sin(XAngle)/(sin(90 - XAngle)/11.887), 2) // ball travel this distance then reach the net
 
     
@@ -85,7 +104,7 @@ const UserInput = ()=> {
     //1.  11.887 <= DIstanceItTravel <= 18.745 to be in
     //2.  X = sin(XAngle)*DistanceItTravel    0 <= X <= 4.115 to be IN 
 
-    // XLandForServe = (sin(XAngle) / (sin(90-XAngle)/18.288))
+    // XLandForServe = (sin(XAngle) / (sin(90-XAngle)/18.288)) Done
     //3.  Y = cos(XAngle)*DistanceItTravel    11.887 <= Y <= 18.745 AND Y < Math.sqrt(Math.pow(XLandForServe, 2) + Math.pow(18.288, 2))
       
       setShowMassage(true);
