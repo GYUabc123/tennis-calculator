@@ -47,13 +47,20 @@ const UserInput = ()=> {
       var Time = ((-1) * YVelocity + Math.sqrt(Math.pow(YVelocity,2) - 4* 4.9 * (-1)*YPosition)) / (2*4.9);
       console.log("Time it take for the ball to hit the ground", Time);
 
-      var PositionHitGround = Time * XVelocity;
-      console.log("Ball travel this disitance then hit the ground", PositionHitGround);
+      var DistanceHitGround = Time * XVelocity;
+      console.log("Ball travel this disitance then hit the ground", DistanceHitGround);
 
           // XLandForServe = (sin(XAngle) / (sin(90-XAngle)/18.288))
-      let XAXA = (Math.sin(XAngles * Math.PI / 180) / (Math.sin((90-XAngles) * Math.PI /180) / 18.288));
-      console.log("X land for serve (X-asix)", XAXA );
-      
+      //X land for serve (X-axis)
+      let XLandForServe = (Math.sin(XAngles * Math.PI / 180) / (Math.sin((90-XAngles) * Math.PI /180) / 18.288));
+      console.log("X land for serve (X-asix)", XLandForServe );
+      //0 <= X <= 4.115 to be IN
+      if(XLandForServe >= 0 && XLandForServe <= 4.115){
+        setResult(true);
+      } else{
+        setResult(false);
+        return;
+      }
 
 
       //X at net = sin(XAngle)/(sin(90 - XAngle)/11.887)
@@ -73,6 +80,22 @@ const UserInput = ()=> {
       let YPosAtNet = YPosition - (YVelocity * TimeAtNet + 4.9 * Math.pow(TimeAtNet, 2)); // need to be <.914 to be over the net
       console.log("time at net", TimeAtNet);
       console.log("Y at net", YPosAtNet);
+
+      if(YPosAtNet > .914){
+        setResult(true);
+      } else{
+        setResult(false);
+        return;
+      }
+
+
+    //1.  11.887 <= DIstanceItTravel <= 18.745 to be in
+      if(DistanceHitGround >= 11.888 && DistanceHitGround <= 18.745){
+        setResult(true);
+      } else{
+        setResult(false);
+        return;
+      }
 
     //X and Y in the ground (check if it is in or out)
       var X = 0;
@@ -95,14 +118,14 @@ const UserInput = ()=> {
     
     //result of the serve
 
-    //YPosAtNet
+    //Y Position At Net   Done
     //TimeAtNet = XPosAtNet / XVelocity
     //YPosAtNet = YVelocity * TimeAtNet + 4.9 * Math.pow(TimeAtNet, 2) //if <= .914  = not over the net
 
 
     //in or out       //All three need and over the net be true then the ball is IN
-    //1.  11.887 <= DIstanceItTravel <= 18.745 to be in
-    //2.  X = sin(XAngle)*DistanceItTravel    0 <= X <= 4.115 to be IN 
+    //1.  11.887 <= DIstanceItTravel <= 18.745 to be in   DONE
+    //2.  X = sin(XAngle)*DistanceItTravel    0 <= X <= 4.115 to be IN    DONE
 
     // XLandForServe = (sin(XAngle) / (sin(90-XAngle)/18.288)) Done
     //3.  Y = cos(XAngle)*DistanceItTravel    11.887 <= Y <= 18.745 AND Y < Math.sqrt(Math.pow(XLandForServe, 2) + Math.pow(18.288, 2))
@@ -120,7 +143,7 @@ const UserInput = ()=> {
           <input type="submit"/>
         </form>
   
-        {showMassage? <h1>Your serve is: {result ? " in" : " out"}</h1> : ""}
+        {showMassage? <h1>Your serve is: {result ? " In" : " Out"}</h1> : ""}
       
       </div>
       
