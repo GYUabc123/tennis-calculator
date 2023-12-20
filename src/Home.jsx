@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import NavBar from './component/NavBar'
 import UserInput from './component/UserInput'
+import TennisCourt from './component/TennisCourt'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,7 +12,7 @@ function App() {
       <div id = "homeMain">
         <UserInput />
         <NavBar currentPage = "Home"/>
-
+        <TennisCourt />
       </div>
     </>
   )

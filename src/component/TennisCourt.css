@@ -1,0 +1,120 @@
+.tennis-court {
+    margin-top: 20px;
+    width: 600px;
+    height: 277px;
+    border: 1px solid #ffffff;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .net {
+    width: 5px;
+    height: 208px;
+    background-color: #000;
+    position: absolute;
+    top: 36.2px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .sidelineBottom {
+    width: 600px;
+    height: 5px;
+    background-color: #000;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .sidelineTop{
+    width: 600px;
+    height: 5px;
+    background-color: #000;
+    position:absolute;
+  }
+
+  .doubleLineTop{
+    width: 600px;
+    height: 5px;
+    background-color: #000;
+    position:absolute;
+    top:36px;
+  }
+
+  .doubleLineBottom{
+    width: 600px;
+    height: 5px;
+    background-color: #000;
+    position:absolute;
+    bottom:33px;
+  }
+
+  .serveLineLeft{
+    width:5px;
+    height: 208px;
+    background-color: #000;
+    position: absolute;
+    top: 36.2px;
+    left: 22.5%;
+  }
+
+  .serveLineRight{
+    width:5px;
+    height: 208px;
+    background-color: #000;
+    position: absolute;
+    top: 36.2px;
+    right: 22.5%;
+  }
+  
+  .baselineRight {
+    width: 5px;
+    height: 277px;
+    background-color: #000;
+    position: absolute;
+    right:0;
+  }
+  
+  .baselineLeft {
+    width: 5px;
+    height: 277px;
+    background-color: #000;
+    position: absolute;
+    left:0;
+  }
+
+  .tLine{
+    width:323px;
+    height: 5px;
+    background-color:#000;
+    position: absolute;
+    top:50%;
+    left:138.5px;
+  }
+
+  .service-area {
+    width: 323px;
+    height: 208px;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 36px;
+    left: 23%;
+  }
+
+  .pin {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #f00;
+    position: absolute;
+  }
+  
+  .serverPosition{
+    width:20px;
+    height:20px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    left: -22px;
+    bottom:40%;
+  }
