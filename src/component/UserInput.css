@@ -3,16 +3,17 @@
     margin-right: 10px;
 }
 
-#userIn{
+.userIn{
     margin-top:70px;
+    margin-left: 27%;
 }
 
-#button{
+.button{
     display: block;
     margin-top: 1em;        /*1em = 16px*/
     border-color: black;
     cursor: pointer;
     width: 55px;
-    height: 40px;
-    border-radius: 10px;
+    height: 35px;
+    border-radius: 15px;
 }

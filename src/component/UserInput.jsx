@@ -9,7 +9,10 @@ const UserInput = ()=> {
     
     const [showMassage, setShowMassage] = useState(false);
     const [result, setResult] = useState(false);
-        
+    var isOverNet = false;
+    var isOutWide = false;
+    var isOutLong = false;
+    
     //const [Velocity, setVelocity] = useState(0);
 
     var Velocity = 0;
@@ -22,6 +25,8 @@ const UserInput = ()=> {
 
     const handleCalculator = (event) => { 
       event.preventDefault();
+
+      setShowMassage(true);
 
       //setVelocity(v.value);
       Velocity = v.value / 60 / 60 * 1600;
@@ -56,12 +61,10 @@ const UserInput = ()=> {
       console.log("X land for serve (X-asix)", XLandForServe );
       //0 <= X <= 4.115 to be IN
       if(XLandForServe >= 0 && XLandForServe <= 4.115){
-        setResult(true);
+        isOutWide = true;
       } else{
-        setResult(false);
-        return;
+        isOutWide = false;
       }
-
 
       //X at net = sin(XAngle)/(sin(90 - XAngle)/11.887)
       let XPosAtNet = (Math.tan(XAngles * Math.PI / 180)) * 11.887;
@@ -81,25 +84,34 @@ const UserInput = ()=> {
       console.log("time at net", TimeAtNet);
       console.log("Y at net", YPosAtNet);
 
+    
       if(YPosAtNet > .914){
-        setResult(true);
+        isOverNet = true;
       } else{
-        setResult(false);
-        return;
+        isOverNet = false;
       }
 
-
-    //1.  11.887 <= DIstanceItTravel <= 18.745 to be in
+    
+      //11.887 <= DIstanceItTravel <= 18.745 to be in
       if(DistanceHitGround >= 11.888 && DistanceHitGround <= 18.745){
+        isOutLong = true;
+      } else{
+        isOutLong = false;
+      }
+      console.log({isOutLong, isOutWide, isOverNet});
+
+      if(isOutLong && isOutWide && isOverNet){
         setResult(true);
       } else{
         setResult(false);
-        return;
       }
+
+      let YLandForServe = DistanceHitGround * Math.cos(XAngles * Math.PI / 180);
+      console.log("Y land for serve (Y-asix)", YLandForServe );
 
     //X and Y in the ground (check if it is in or out)
-      var X = 0;
-      var Y;
+      let X = XLandForServe;
+      let Y = YLandForServe;
       
       //Calculation   DONE
       //YVelocity = Math.sin(YDegree.value) * Velocity;
@@ -129,24 +141,22 @@ const UserInput = ()=> {
 
     // XLandForServe = (sin(XAngle) / (sin(90-XAngle)/18.288)) Done
     //3.  Y = cos(XAngle)*DistanceItTravel    11.887 <= Y <= 18.745 AND Y < Math.sqrt(Math.pow(XLandForServe, 2) + Math.pow(18.288, 2))
-      
-      setShowMassage(true);
+    //setShowMassage(true);
     }
 
     return (
-      <div className = "userIn" id="userIn" >
-        <form id="userInFrom" onSubmit={handleCalculator}>
-          <input className="textBox" type="text" placeholder="Hit Point (height in meter)" id = "height" required/>
-          <input className="textBox" type="text" placeholder="X-degree" id = "XDegree" required/>
-          <input className='textBox' type="text" placeholder="velocity (mph)" id = "v" required/>
-          <input className="textBox" type="text" placeholder="Y-degree" id = "YDegree" required/>
-          <input type="submit"/>
-        </form>
-  
-        {showMassage? <h1>Your serve is: {result ? " In" : " Out"}</h1> : ""}
-      
+      <div>
+        <div className="userIn" id="userIn">
+          <form id="userInFrom" onSubmit={handleCalculator}>
+            <input className="textBox" type="text" placeholder="Hit Point (height in meter)" id = "height" required/>
+            <input className="textBox" type="text" placeholder="X-degree" id = "XDegree" required/>
+            <input className='textBox' type="text" placeholder="velocity (mph)" id = "v" required/>
+            <input className="textBox" type="text" placeholder="Y-degree" id = "YDegree" required/>
+            <input className="button" type="submit"/>
+          </form>
+          {showMassage? <h1>The result for the serve is: {result ? " In :)" : " Out :("}</h1> : ""}
+        </div>
       </div>
-      
     );
 }
 

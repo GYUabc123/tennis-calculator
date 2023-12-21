@@ -4,13 +4,15 @@ import './TennisCourt.css';
 const TennisCourt = () => {
     const [pins, setPins] = useState([]);
 
-    const placePin = (x, y) => {
-        const pinPosition = {x,y};
-        setPins([...pins, pinPosition]);
+    const placePin = (event) => {
+      const{clientX, clientY} = event.nativeEvent;
+        const pinPosition = {x:clientX, y: clientY};
+        setPins([pinPosition]);
+        console.log({pinPosition});
     };
 
     return (
-    <div className="tennis-court">
+    <div className="tennis-court" onClick={placePin}>
       <div className="net"></div>
       <div className="baselineRight"></div>
       <div className="baselineLeft"></div>
@@ -24,7 +26,7 @@ const TennisCourt = () => {
       <div className="service-area"></div>
       <div className='serverPosition'></div>
       {pins.map((pin) => (
-        <div className="pin" style={{ left: pin.x, top: pin.y }}></div>
+        <div className="pin" key={pin.x + pin.y} style={{ left: pin.x - 472, top: pin.y-165 }}></div>
       ))}
       
     </div>
