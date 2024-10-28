@@ -112,36 +112,8 @@ const UserInput = ()=> {
     //X and Y in the ground (check if it is in or out)
       let X = XLandForServe;
       let Y = YLandForServe;
-      
-      //Calculation   DONE
-      //YVelocity = Math.sin(YDegree.value) * Velocity;
-      
-      ////////0 = 4.9t^2 + YVelocity*t - YPosition    DONE
-      // Time = (-1) * YVelocity + Math.sqrt(Math.pow(YVelocity, 2) - 4* 4.9 * (-1)*YPosition) / (2*4.9) //time it took for ball to land 
+      onCalculate(XLandForServe, YLandForServe); // Send X and Y to parent
 
-      //XVelocity = cos(YAngle) * velocity DONE
-
-      //Done
-    //DistanceItTravel = time * XVelocity // the ball travel this distance and hit the ground
-
-    //Done                                                       //X at net = sin(XAngle)/(sin(90 - XAngle)/11.887)
-    //DistanceItTravelAtNet = Math.sqrt(Math.pow(11.887, 2) + Math.pow(sin(XAngle)/(sin(90 - XAngle)/11.887), 2) // ball travel this distance then reach the net
-
-    
-    //result of the serve
-
-    //Y Position At Net   Done
-    //TimeAtNet = XPosAtNet / XVelocity
-    //YPosAtNet = YVelocity * TimeAtNet + 4.9 * Math.pow(TimeAtNet, 2) //if <= .914  = not over the net
-
-
-    //in or out       //All three need and over the net be true then the ball is IN
-    //1.  11.887 <= DIstanceItTravel <= 18.745 to be in   DONE
-    //2.  X = sin(XAngle)*DistanceItTravel    0 <= X <= 4.115 to be IN    DONE
-
-    // XLandForServe = (sin(XAngle) / (sin(90-XAngle)/18.288)) Done
-    //3.  Y = cos(XAngle)*DistanceItTravel    11.887 <= Y <= 18.745 AND Y < Math.sqrt(Math.pow(XLandForServe, 2) + Math.pow(18.288, 2))
-    //setShowMassage(true);
     }
 
     return (
